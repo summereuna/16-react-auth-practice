@@ -1,6 +1,6 @@
-import { NavLink } from 'react-router-dom';
+import { NavLink } from "react-router-dom";
 
-import classes from './EventsNavigation.module.css';
+import classes from "./EventsNavigation.module.css";
 
 function EventsNavigation() {
   return (
@@ -15,7 +15,7 @@ function EventsNavigation() {
               }
               end
             >
-              All Events
+              모든 이벤트
             </NavLink>
           </li>
           <li>
@@ -25,7 +25,7 @@ function EventsNavigation() {
                 isActive ? classes.active : undefined
               }
             >
-              New Event
+              새로운 이벤트
             </NavLink>
           </li>
         </ul>

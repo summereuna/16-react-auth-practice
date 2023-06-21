@@ -16,7 +16,7 @@ function MainNavigation() {
               }
               end
             >
-              Home
+              홈
             </NavLink>
           </li>
           <li>
@@ -26,7 +26,7 @@ function MainNavigation() {
                 isActive ? classes.active : undefined
               }
             >
-              Events
+              이벤트
             </NavLink>
           </li>
           <li>
@@ -36,7 +36,7 @@ function MainNavigation() {
                 isActive ? classes.active : undefined
               }
             >
-              Newsletter
+              뉴스레터
             </NavLink>
           </li>
           <li>
@@ -46,7 +46,7 @@ function MainNavigation() {
                 isActive ? classes.active : undefined
               }
             >
-              Login
+              로그인
             </NavLink>
           </li>
         </ul>

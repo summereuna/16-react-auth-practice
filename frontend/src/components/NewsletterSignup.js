@@ -1,14 +1,14 @@
-import { useEffect } from 'react';
-import { useFetcher } from 'react-router-dom';
+import { useEffect } from "react";
+import { useFetcher } from "react-router-dom";
 
-import classes from './NewsletterSignup.module.css';
+import classes from "./NewsletterSignup.module.css";
 
 function NewsletterSignup() {
   const fetcher = useFetcher();
   const { data, state } = fetcher;
 
   useEffect(() => {
-    if (state === 'idle' && data && data.message) {
+    if (state === "idle" && data && data.message) {
       window.alert(data.message);
     }
   }, [data, state]);
@@ -21,10 +21,10 @@ function NewsletterSignup() {
     >
       <input
         type="email"
-        placeholder="Sign up for newsletter..."
-        aria-label="Sign up for newsletter"
+        placeholder="이메일을 입력하세요."
+        aria-label="뉴스레터 구독을 위해 이메일을 입력하세요."
       />
-      <button>Sign up</button>
+      <button>구독</button>
     </fetcher.Form>
   );
 }
