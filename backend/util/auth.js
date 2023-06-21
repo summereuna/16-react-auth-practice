@@ -6,7 +6,7 @@ const { NotAuthError } = require("./errors");
 const KEY = "supersecret";
 
 function createJSONToken(email) {
-  return sign({ email }, KEY, { expiresIn: "1h" });
+  return sign({ email }, KEY, { expiresIn: "1h" }); //백엔드에서는 1시간 후에 만료되는 토큰 생성
 }
 //따라서 토큰은 알고리즘에 따라 생성된 스트링으로 이 KEY를 가지고 등록된다.
 
