@@ -37,7 +37,9 @@ export const action = async ({ request }) => {
     throw json({ message: "사용자 인증 불가" }, { status: 500 });
   }
 
-  //응답 성공시 백엔드에서 얻는 토큰 관리...
+  const resData = await response.json();
+  const token = resData.token;
+  localStorage.setItem("token", token);
 
   return redirect("/");
 };
