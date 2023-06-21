@@ -11,7 +11,7 @@ function RootLayout() {
 
   useEffect(() => {
     if (!token) {
-      return; //return null 해야 하나..?
+      return;
     }
 
     if (token) {
