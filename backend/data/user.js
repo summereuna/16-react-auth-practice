@@ -19,12 +19,12 @@ async function add(data) {
 async function get(email) {
   const storedData = await readData();
   if (!storedData.users || storedData.users.length === 0) {
-    throw new NotFoundError("Could not find any users.");
+    throw new NotFoundError("사용자를 찾을 수 없습니다.");
   }
 
   const user = storedData.users.find((ev) => ev.email === email);
   if (!user) {
-    throw new NotFoundError("Could not find user for email " + email);
+    throw new NotFoundError(`${email}를 사용하는 사용자를 찾을 수 없습니다`);
   }
 
   return user;

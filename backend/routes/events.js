@@ -40,31 +40,31 @@ router.post("/", async (req, res, next) => {
   let errors = {};
 
   if (!isValidText(data.title)) {
-    errors.title = "Invalid title.";
+    errors.title = "유효하지 않은 제목입니다.";
   }
 
   if (!isValidText(data.description)) {
-    errors.description = "Invalid description.";
+    errors.description = "유효하지 않은 설명입니다.";
   }
 
   if (!isValidDate(data.date)) {
-    errors.date = "Invalid date.";
+    errors.date = "유효하지 않은 날짜입니다.";
   }
 
   if (!isValidImageUrl(data.image)) {
-    errors.image = "Invalid image.";
+    errors.image = "유효하지 않은 이미지입니다.";
   }
 
   if (Object.keys(errors).length > 0) {
     return res.status(422).json({
-      message: "Adding the event failed due to validation errors.",
+      message: "유효성 검사 오류로 인해 이벤트를 추가하지 못했습니다.",
       errors,
     });
   }
 
   try {
     await add(data);
-    res.status(201).json({ message: "Event saved.", event: data });
+    res.status(201).json({ message: "이벤트가 저장되었습니다.", event: data });
   } catch (error) {
     next(error);
   }
@@ -77,31 +77,31 @@ router.patch("/:id", async (req, res, next) => {
   let errors = {};
 
   if (!isValidText(data.title)) {
-    errors.title = "Invalid title.";
+    errors.title = "유효하지 않은 제목입니다.";
   }
 
   if (!isValidText(data.description)) {
-    errors.description = "Invalid description.";
+    errors.description = "유효하지 않은 설명입니다.";
   }
 
   if (!isValidDate(data.date)) {
-    errors.date = "Invalid date.";
+    errors.date = "유효하지 않은 날짜입니다.";
   }
 
   if (!isValidImageUrl(data.image)) {
-    errors.image = "Invalid image.";
+    errors.image = "유효하지 않은 이미지입니다.";
   }
 
   if (Object.keys(errors).length > 0) {
     return res.status(422).json({
-      message: "Updating the event failed due to validation errors.",
+      message: "유효성 검사 오류로 인해 이벤트를 업데이트하지 못했습니다.",
       errors,
     });
   }
 
   try {
     await replace(req.params.id, data);
-    res.json({ message: "Event updated.", event: data });
+    res.json({ message: "이벤트가 업데이트되었습니다.", event: data });
   } catch (error) {
     next(error);
   }
@@ -111,7 +111,7 @@ router.patch("/:id", async (req, res, next) => {
 router.delete("/:id", async (req, res, next) => {
   try {
     await remove(req.params.id);
-    res.json({ message: "Event deleted." });
+    res.json({ message: "이벤트가 삭제되었습니다." });
   } catch (error) {
     next(error);
   }

@@ -28,13 +28,13 @@ function checkAuthMiddleware(req, res, next) {
   }
   if (!req.headers.authorization) {
     console.log("NOT AUTH. AUTH HEADER MISSING.");
-    return next(new NotAuthError("Not authenticated."));
+    return next(new NotAuthError("인증되지 않았습니다."));
   }
   const authFragments = req.headers.authorization.split(" ");
 
   if (authFragments.length !== 2) {
     console.log("NOT AUTH. AUTH HEADER INVALID.");
-    return next(new NotAuthError("Not authenticated."));
+    return next(new NotAuthError("인증되지 않았습니다."));
   }
   const authToken = authFragments[1];
   try {
@@ -42,7 +42,7 @@ function checkAuthMiddleware(req, res, next) {
     req.token = validatedToken;
   } catch (error) {
     console.log("NOT AUTH. TOKEN INVALID.");
-    return next(new NotAuthError("Not authenticated."));
+    return next(new NotAuthError("인증되지 않았습니다."));
   }
   next();
 }
